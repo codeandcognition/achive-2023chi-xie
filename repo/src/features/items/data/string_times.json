@@ -1,0 +1,35 @@
+{
+  "name": "string_times",
+  "params": [
+    "s",
+    "n"
+  ],
+  "param_types": [
+      "str",
+      "int"
+  ],
+  "prompt": "Given a string and a non-negative int `n`, return a larger string that is n copies of the original string.\n\n- `string_times('Hi', 2) → 'HiHi'`\n- `string_times('Hi', 3) → 'HiHiHi'`\n- `string_times('Hi', 1) → 'Hi'`",
+  "test_cases": {
+    "c0": {
+      "inputs": [
+        "Hi",
+        2
+      ],
+      "output_expected": "HiHi"
+    },
+    "c1": {
+      "inputs": [
+        "Hi",
+        3
+      ],
+      "output_expected": "HiHiHi"
+    },
+    "c2": {
+      "inputs": [
+        "Hi",
+        1
+      ],
+      "output_expected": "Hi"
+    }
+  }
+}

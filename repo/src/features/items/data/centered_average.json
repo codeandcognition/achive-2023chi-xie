@@ -1,0 +1,30 @@
+{
+  "name": "centered_average",
+  "params": [
+    "nums"
+  ],
+  "prompt":"Return the 'centered' average of an array of ints, which we'll say is the mean average of the values, except ignoring the largest and smallest values in the array. If there are multiple copies of the smallest value, ignore just one copy, and likewise for the largest value. Use int division to produce the final average. You may assume that the array is length 3 or more.\n\n- `centered_average([1, 2, 3, 4, 100]) → 3`\n- `centered_average([1, 1, 5, 5, 10, 8, 7]) → 5`\n- `centered_average([-10, -4, -2, -4, -2, 0]) → -3`\n",
+  "test_cases": {
+    "c0": {
+      "inputs": [
+        [-10, -4, -2, -4, -2, 0]
+      ],
+      "output_expected": -3
+    },
+    "c1": {
+      "inputs": [
+        [5, 3, 4, 6, 2]
+      ],
+      "output_expected": 4
+    },
+    "c2": {
+      "inputs": [
+      [1, 2, 3, 4, 100]
+      ],
+      "output_expected": 3
+    }
+  },
+  "param_types": [
+    "list"
+  ]
+}

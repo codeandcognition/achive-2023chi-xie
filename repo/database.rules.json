@@ -1,0 +1,55 @@
+/*
+ * TODO:
+ *  - add admin role to users + update other rules accordingly
+ * 
+ * <-- Cascading Rules -->
+ * 
+ * /users, /ksl, /reflection_response, /item_status:
+ * 	- user can only read/write their own data
+ * 
+ * /practice:
+ * 	- read open
+ *  - write for admins only (yet to be implemented, see TODO above)
+ * 
+ * /reflection:
+ *  - read true for everyone
+ *  - write false for everyone (can update later)
+ * 
+ * helpful article: https://stackoverflow.com/questions/48454965/allowing-users-to-only-modify-their-own-data-on-firebase
+ */
+{
+  "rules": {
+    "users": {
+      "$uid": {
+        ".read": "$uid === auth.uid",
+        ".write": "$uid === auth.uid"
+      }
+    },
+    "ksl": {
+      "$uid": {
+        ".read": "$uid === auth.uid", // root.child('users').child(auth.uid) == $uid <- ?
+        ".write": "$uid === auth.uid"
+      }
+    },
+    "reflection_response": {
+      "$uid": {
+        ".read": "$uid === auth.uid",
+        ".write": "$uid === auth.uid"
+      }
+    },
+    "item_status": {
+      "$uid": {
+        ".read": "$uid === auth.uid",
+        ".write": "$uid === auth.uid"
+      }
+    },
+    "practice": {
+      ".read": "auth != null",
+      ".write": false // TODO: update for admin role only
+    },
+    "reflection": {
+      ".read": "auth != null",
+      ".write": false // TODO: update for admin role only
+    }
+  }
+}
